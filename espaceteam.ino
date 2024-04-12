@@ -268,7 +268,8 @@ void loop()
   }
   if (askExpired) {
     progress = max(0, progress - 1);
-    broadcast(String(progress));
+    broadcast("P: " + String(progress));
+    Serial.printf("DECREMENTED progress: %d\n", progress);
     //tft.fillRect(0, 0, 135, 90, TFT_RED);
     cmdRecvd = waitingCmd;
     redrawCmdRecvd = true;
